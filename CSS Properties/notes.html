@@ -1,0 +1,44 @@
+//CSS Color. Color properties. 
+Color picker websites are below. 
+//1. https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
+//2. For more unique color pallet: https://colorhunt.co/
+RGB color mixer: https://www.csfieldguide.org.nz/en/interactives/rgb-mixer/
+
+//Font properties
+1. Font size
+ - Pixel(px): 1 pixel is 1/96th inch or 0.26mm in square
+ - Point(pt): 1 point is 1/72nd inch or 0.35mm in square
+ - em: em depends 100% on the parent tag changes. Ex: font of a tag is 20em and parent is 2px then em is calculated as 2x20=40px
+ - rem: rem depends 100% on the root(html) tag changes. Ex: font of a tag is 20rem and root is 2px then rem is calculated as 2x20=40px
+ 2. Font weight
+ - Normal
+ - Bold
+ - We can create font relative to parent
+ - We can also use numbers(100-900). Lighter means -100 and bolder +100
+3. Font Family: what font you want the text to look like
+Ex: font-family: Helvetica,sans-serif. Helvetica is called the typeface, and the sans is the generic font backup as fonts
+ will be missing in systems. If font name has spaces the use the double quotes. Ex: "Times New Roman"
+Best website to find fonts: https://fonts.google.com/
+
+//Test Align
+Ex: text-align: center; Also. justify, start, end, right, left
+
+//The Box Model(Margin, Padding, Border): Everything in HTML is represented in box shape
+Margin, Padding, Border, along with height and width form a CSS box model
+- Width and height can be represented by px or percentage(%)
+Ex: height: 300px; width: 300%;
+- Border should be represented by first the border thickness, second is style of border and third is color. It does not change the the size of the inner box.
+Ex: border: 12px solid black;
+    border-top: 0px; //if declared only once then all sides will be effected
+    border-width: 0px 10px 20px 30px; //(0px-top, 10-right, 20-bottom, 30-left, goes in clockwise direction)
+    border-width: 10px 20px; //(top+bottom = 10px, right+left = 20px)
+- Padding: it adds space between the inner box and the border, without changing the size of the inner box.
+Ex: padding: 12px;    
+- Margin: it adds space outside the border.
+Ex: margin: 3px
+- Padding, margin and border-width all 3 functions the same as the border-width example
+// To create a box we need to use the content division element. i,e <div></div>
+- Since the <div> is invisible it is sometimes difficult to debug, use the extension 'Pesticide chrome extension' to get rid of bugs in CSS
+    
+
+

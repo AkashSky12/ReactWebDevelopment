@@ -1,0 +1,74 @@
+//CSS: Cascading style sheets, style sheet is a type of language that allows us to specify how things should look in our website
+//CSS, SASS: syntactically awesome style sheet, LESS: Linear CSS...
+<!-- There are 3 ways to add CSS in html. 1. Inline. Ex:<tag style:"css"/>, 2. Internal. Ex: <style>css</style>, 3. External. Ex: <link href="style.css"/> -->
+//The inline CSS goes within the html tag. All attributes have name, equal sign and value. Ex: <html style="background: blue;"/>-
+//- The inline is mostly used on the element level
+//Internal CSS example. It is applicable and limited to only one html page. Mostly used on single html webpage level
+<!-- <html>
+    <head>
+        <style>
+            html {
+                background: red;
+            }
+        </style>
+    </head>
+</html> -->
+//External CSS. Create a separate style.css file , add all the styles required and link it with the html file. Mostly used on multipage website
+//To link the style.css with the html. Use the link tag with the head tag to link it. The link tag consist of 2 things-
+//-1. Relationship, 2. location of the file. Below is the example.
+<!-- <html>
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+</html> -->
+//Element Selector. In the below example h1 is the css selector.
+<!-- h1 {
+    color: blue
+} -->
+//Class Selector. A class is an attribute that we can add to any html element to group properties.
+<!-- Ex:
+    In html: 
+    <h2 class="red-text">Red</h2>
+    <h3>Heading</h3>
+    <p class="red-text">Paragraph</p>
+    In CSS use the below:
+    .red-text{
+    color: red
+}-->
+//ID Selector. It should be unique to an element.
+<!-- Ex:
+    In html:
+    <h2 id="main">Red</h2>
+    <h2>Green</h2>
+    <h2>Blue</h2>
+    In CSS:
+    #main{
+        color: red
+    } -->
+//Class selector is applied to many elements and ID selector is applied to single element.
+//Attribute selector. 
+<!-- Ex-1:
+    In html:
+    <p draggable="true">Drag Me</p>
+    <p>Don't drag me</p>
+    <p>Don't drag me</p>
+    In CSS:
+    p[draggable]{ //Select all 'p' elements and apply the attribute 'draggable' and apply the below css style
+        color:"Red" 
+    }-->
+    <!-- Ex-2:
+    In html:
+    <p draggable="true">Drag Me</p>
+    <p draggable="false">Don't drag me</p>
+    <p draggable="false">Don't drag me</p>
+    In CSS:
+    p[draggable="false"]{ 
+        color:"Red" 
+    }-->
+//Universal selector.
+<!-- Ex:
+    No matter the html, this css will be applied universally 
+    In CSS:
+    *{  //*: select all
+        color: red
+    }-->

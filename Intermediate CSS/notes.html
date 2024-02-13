@@ -1,0 +1,116 @@
+//Assume if same h1 is using multiple CSS. How would you differentiate them? Cascading from CSS comes into play
+- Ex: HTML:
+  <ol>
+    <li>One</li>
+    <li style="color: red;">Two</li>
+    <li>Three</li>
+  </ol>
+CSS:
+li{
+    color: green;
+}
+- The hierarchy goes from, 1. External, 2. Inline. So the inline overwrites the external CSS
+* 4 importance of CSS rule: 1. Important, 2. Type, 3. Specificity, 4. Position
+1. Position: check whether if a rule is at higher or lower position in CSS relative to other rules
+Ex: 
+li{ //for this li, blue will be the output
+    color: red;
+    color: blue;
+}
+li{ //for this entire program, green will the output. The hierarchy goes as they are overwritten
+color: green;
+}
+2. Specificity: The order is 1. id, 2. Attribute, 3. Class, 4. Element are hierarchy
+Ex: HTML:
+    <li id="first-id" class="first-class" draggable></li> 
+    CSS:
+    li{color: blue;}
+    .first-class {color: red;}
+    li[draggable] {color: red;} //The attribute will override the class
+    #first-id {color: orange;}
+3. Type: 1. Inline, 2. Internal, 3. External is the hierarchy. The 'Inline' is given highest priority and will override
+Ex: HTML:
+     <link rel="stylesheet" href="./style.css"> //External
+    <style></style>     //Internal
+    <h1 style=" ">Hello</h1>      //Inline
+4. Importance: to make the rule mandatory or override everything we can use '!important'
+Ex: 
+   color: red;
+   color: blue !important;  //This overrides all the other rules
+   
+*Combining CSS
+- To set some element rule within a div without affecting other elements is by using class descendants 
+Ex:HTML:
+   <p>Yellow Text</p>
+   <div class="box inner-box">
+    <p>White Text</p>   //To change only this 'p' tag property, we can use the below CSS
+   </div> 
+   CSS:
+   p {
+    color: yellow;
+   }
+   .inner-box p {
+    color: purple;
+   }
+
+1. Group combination: group the tag and apply CSS  
+Syntax: selector1, selector2... {  //you can add more selectors
+        color: red;
+        }
+
+2. Child combination: traverse from parent to child and apply CSS(div inside an div). It applies only for direct child.
+Syntax: selector1(Parent) > selector2(child) {
+        color: firebrick;
+        }        
+
+3. Descendant combination: traverse from the ancestor to descendant
+Syntax: selector1(ancestor) selector2(descendant) {
+        color:blue;
+        }        
+   
+4. Chaining combination: apply this combination where all the selectors are true. To add properties on specific tag.
+Syntax: selector1selector2 {
+        color: seagreen;
+        }       
+
+5. Combining combination: This method combines the any of 2 above combinations.
+Syntax: Combination of descendant and chaining selector combinations
+        selector1(ancestor) selector2selector3 {
+            font-size: 2rem;
+        }    
+        
+//CSS Position:
+1. Static: HTML default flow. If set static no positioning happens in any direction, stays in default location. 
+Ex: position: static; //in this the left and top is not considered 
+    left: 50px;
+    top: 50px;        
+2. Relative: It set to relative then the box can be set to relative position in any directions.
+Ex: position: relative;  //in this the box moves left 50px and top 50px relatively
+    left: 50px;
+    top: 50px;      
+3. Absolute: it makes the positioning relative to the nearest positioned ancestor or top-left corner of the webpage.
+   NOTE: If we need to set the descendant position to relative, we need to set the ancestor also to relative.     
+Ex: position: absolute;  //in this the box moves left 50px and top 50px absolutely 
+    left: 50px;
+    top: 50px;
+4. Fixed: it makes the positioning relative to the top-left corner of the browser window. Even if page is scrolled it doesn't move.  
+Ex: position: fixed;  //in this the box moves left 50px and top 50px from the browser top-left corner
+    left: 50px;
+    top: 50px;      
+NOTE: Z-index: it determines which element should go on top of the other in z-axis
+Ex: The absolute div will be on top of all other div, to move it to the back we can use the below
+    div {
+        position: absolute;
+        z-index: -1;    
+    }
+
+NOTE: to create a circle in CSS 
+Ex: .circle {
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    }   
+
+* Flag Project:
+http://lascarid.es/fussyflags/    

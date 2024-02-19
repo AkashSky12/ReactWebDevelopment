@@ -1,0 +1,150 @@
+//CSS Flexbox
+Flexbox is basically used for designing creative layouts
+- In flexbox it's mainly wrap the div's inside a container and target those containers in CSS by adding display: flex;
+
+NOTE: div has default block display, span has default inline display
+
+//Fex direction:
+By default the flex direction is set to row, because the data is added in the row(next to an item)
+Main-axis: it is from left to right
+Cross-axis: it is from top to bottom
+Ex: #pond {
+  display: flex;
+  flex-direction: column; //row/column/row-reverse/column-reverse
+}
+
+//Flex-Basis: if flex basic is set to 100px, then every div will expand 100px along the main axis
+
+//Flex-wrap: By default, flex items will all try to fit onto one line. You can change that and allow the items to 
+wrap as needed with this property.
+Ex: .container {
+    flex-wrap: nowrap | wrap | wrap-reverse;
+  }
+- By default all the elements order value will be set to 0, they are arranged in ascending order as the values are set
+1. Nowrap: if it set to 'nowrap' then new elements added will be added at the end and once it reaches the max width the new
+  data will not go to new line. It'll continue in the same row.  
+Ex: .container {
+    flex-wrap: nowrap;
+  }   
+
+2. Wrap: if it set to 'nowrap' then new elements added will be added at the end and once it reaches the max width the new
+data will go to new line and fit the 
+
+3. Wrap-reverse: elements are wrapped but when website is scaled down thens elements go from bottom right corner to
+top left corner.
+Ex: .container {
+    flex-wrap: wrap-reverse;
+  }       
+
+//Justify-Content:
+1. Flex-start: when this is used the elements will be bunched up to the left
+Ex: .container {
+    justify-content: flex-start;
+}
+  
+2. Flex-end: when this is used the elements will be bunched up to the right
+Ex: .container {
+    justify-content: flex-end;
+}
+
+3. Center: when this is used the elements will be bunched up to the center 
+Ex: .container {
+    justify-content: center;
+}
+
+4. Space-between/space-around/space-evenly: when this is used the elements will be bunched up with spaces covering the website
+Ex:  .container {
+    justify-content: space-between/space-around/space-evenly;
+}
+
+//Align-Items: It sets the height of the container. For this the flex-wrap should be set to 'nowrap'
+1. Flex-start: when this is used the elements will be bunched up to the top
+Ex: .container {
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  height: 70vh; // sets the height of the container
+} 
+
+2. Flex-end: when this is used the elements will be bunched up to the bottom
+Ex: .container {
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  height: 70vh; // sets the height of the container (vh- viewport height)
+} 
+
+3. Center: when this is used the elements will be bunched up to the center
+Ex: .container {
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 70vh; // sets the height of the container
+} 
+
+4. Baseline: when this is used the elements will be bunched up to the top with gap
+Ex: .container {
+  flex-wrap: nowrap;
+  align-items: baseline;
+} 
+
+5. Stretch: when this is used the elements will be bunched up to the top and stretched till bottom
+Ex: .container {
+  flex-wrap: nowrap;
+  align-items: Stretch;
+} 
+
+//Align-Self: if we need only one element on top and others on different alignment
+Ex: .container {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+  .violet {
+    align-self: flex-start;
+  }
+
+*Reference: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+            https://saijogeorge.com/css-puns/europe-country/  
+            https://appbrewery.github.io/flexboxfroggy/
+
+//Align-content: to set align-content we need to first make the flex-wrap: wrap;. It works similar to the align-items.
+It adjusts the elements accordingly once website is scaled down and takes the elements to new line.
+Ex: .container {
+  flex-wrap: wrap;
+  align-content: center;
+}            
+
+//flex-flow
+This is a shorthand for the flex-direction and flex-wrap properties, which together define the flex container’s
+main and cross axes. The default value is row nowrap.  
+Ex: .container {
+    flex-flow: column wrap;
+  }
+
+//Flex-sizing: shrinking and growing the flexbox.
+- Flexbox by default max-width looks at the longest possible line of the text, whereas the min-width looks at the longest
+word to determine the minimum width.
+- The hierarchy starts from 1. content-width, 2. width, 3. Flex-basis. 4. min-width/max-width. '4' has the highest priority
+- If Flex-basis is less than max-width then it is considered. Whereas if the min-width is larger than flex-basis then
+min-width is only considered. And it is not gonna shrink beyond the min-width. By default flex-basis is set to auto, that
+means it'll give more priority to items with more content. If we don't need flex-basis then set it to '0'.
+- If we want the items in the page not to grow or shrink then,
+Ex: .container {
+    flex-basis: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+- If the flex-grow is set to 1 then the items fill the webpage. 
+Ex: .container {
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+- If the flex-shrink is set to 1 then it's gonna adjust to the minimum width of the content.
+Ex: .container {
+    flex-basis: 100px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+* There is also a short way of writing the flex-basis
+Ex: flex: 1 1 0; //the first value is 'grow', second is 'shrink', and the third is 'basis'
+
+

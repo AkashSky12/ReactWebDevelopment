@@ -1,0 +1,137 @@
+//CSS Display
+//SPAM: We can display a word separately with style in paragraph. Using SPAM tag and display property in CSS.
+- There are 3 types of 'display' property.
+1. Inline value: if the elements are set to inline. Then words go in the same line until end of the webpage, then 
+new line. We cannot set the height and width of inline elements.
+Ex: HTML:
+<h3>Akash</h3>
+<h3>Simon</h3>
+In CSS:
+h3 {
+    display: inline; //it displays on same line without the second word going to new line. O/P: Akash Simon in 1 line 
+}
+
+2. Block value: if the element is set to block. Then it'll take up the entire full with of the webpage for a word. 
+ And new line for another word.
+Ex: HTML:
+<h3>Akash</h3>
+<h3>Simon</h3>
+In CSS:
+h3 {
+    display: block;
+}
+
+3. Inline-Block: if the element is set to this. Then we can set height and width also multiple elements can go in the same line.
+
+4. None: if the element is set to this. Then it makes the element disappear.
+
+- Reference: https://appbrewery.github.io/css-display/
+
+//Float: if we want to wrap our text around another element. Like a newspaper image and text around that fits in box.
+Ex: HTML:
+    <img src="" alt="">
+    <p>text.....</p>
+    CSS:
+    img {
+      float: left;  //images goes to left and automatically text is wrapped to the right
+    }
+
+//Clear: it clears any responsibility to wrap around things that are floating.
+Ex: HTML: 
+    <img src="" alt="">
+    <p>text...</p>
+    <footer>Copyright.....</footer>
+    CSS:
+    img {
+        float: right:
+    }
+    footer {
+        clear: left; //this means the footer is clear from left float and it goes to its normal position ignoring float.
+    }
+
+//Responsive Website: making websites look good on all screen sizes. i.e, making website fit on all the screen sizes
+1. Media Queries:
+Ex: @media (max-width: 600px) {
+    //CSS for screens below or equal to 600px wide
+} 
+2. CSS Grid: used for creating 2D layouts
+Ex: HTML:
+    <div class="grid-container">
+      <div class="first card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+    CSS:
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 200px 200px;
+        gap: 30px;
+    }
+    .first {
+        grid-column: span 2;
+    }
+    .card {
+        background-color: blue;
+    }
+3. CSS Flexbox: used for creating 1D layouts. For creating boxes with different/same sizes horizontally or vertically in website.
+Ex: HTML:
+    <div class="flex-container">
+      <div class="first card"></div>
+      <div class="second card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+    CSS:
+    .flex-container {
+        display: flex;
+    }
+    .card {
+        background: blue;
+        border: 30px solid white;
+        height: 100px;
+        flex: 1;
+    }
+    .first {
+        flex: 2;
+    }
+    .second {
+        flex: 0.5;
+    }
+4. External framework(Bootstrap): it is a framework created using Flexbox. It divides the website to 12 sections 
+Ex: <div class="container"></div>
+      <div class="row"></div>
+        <div class="card col-6"></div>
+        Card
+        </div>
+        <div class="card col-2"></div>
+        Card
+        </div>
+        <div class="card col-4"></div>
+        Card
+        </div>
+      </div>
+    </div>
+    
+1. Media Queries: 
+Syntax: @media (max-width: 600px) { //anything within the bracket is called breakpoint, anything given within the range
+    h1 {                              will be using the below CSS design.
+        font-size: 15px;
+    }
+}    
+a. Combine:
+Syntax: @media (min-width: 600px) and (max-width: 900px) { //min is for the right side of the screen and max for left side
+    /*Styles for screens between 600px and 900px*/
+}
+Syntax: @media (max-width: 600px) and (min-width: 900px) { 
+    /*Styles for screens less than 600px and greater than 900px*/
+}
+
+b. Device: 
+Syntax: @media screen (orientation: landscape) {
+    /*Styles for landscape orientation*/
+}
+//instead of screen print is also there which means target media query whenever the website is printed and to give it a
+  different layout.

@@ -1,0 +1,50 @@
+CSS Grid:
+- CSS grid is basically used for 2D layouts, with table structure of columns and rows
+Grid vs Flexbox reference: https://appbrewery.github.io/grid-vs-flexbox/
+- When the layout is set to grid and the screen is made smaller the items get lined up to each other in column and row 
+ basis, also making a grid structure. Whereas the flexbox does not have the same behavior.
+//How to create a grid structure
+HTML:
+<div class="container">
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+</div>  
+CSS:
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; //fr: fraction. This means second box twice the size of the first box
+    grid-template-row: 1fr 1fr; //number of rows ro create
+    gap: 10px;
+}
+
+//Grid sizing:
+Ex: HTML:
+<div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+</div>
+CSS: 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-row: 1fr 1fr;
+    gap: 10px;
+}
+- Template rows/columns can be created using fr, px, rem, grid-template
+- Grid created using px/rem are not responsive. i,e. if we change the width and height of screen, then grid doesn't change
+- Other way to represent grid-template-row/column:
+Ex: grid-template: 100px 200px / 400px 800px; //first part defined is rows and the second is column
+- We can use auto to setup the grid:
+Ex: 
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px auto; //setting column auto takes up 100% width of webpage
+    grid-template-row: 100px auto; //setting row auto makes sure that the space is set for content to fit
+}
+
+Reference: https://appbrewery.github.io/grid-sizing/
+
